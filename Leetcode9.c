@@ -1,3 +1,11 @@
+/*
+需注意C语言中没有bool类型 
+*/
+
+
+
+
+
 bool isPalindrome(int x) {
 	if (x < 0) {
 		return false;
