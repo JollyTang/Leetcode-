@@ -1,0 +1,24 @@
+class Solution {
+    public String defangIPaddr(String address) {
+        int length = address.length();
+        for(int i = 0;i<address.length();i++){
+            char temp = address.charAt(i);
+            if(temp == '.'){
+                length += 2;
+            }
+        }
+
+        char[] ans = new char[length];
+        for(int i = 0,k = 0;i<address.length();i++){
+            char temp = address.charAt(i);
+            if(temp == '.'){
+                ans[k++] = '[';
+                ans[k++] = '.';
+                ans[k++] = ']';
+            }else{
+                ans[k++] = temp;
+            }
+        } 
+        return new String(ans);
+    }
+}
